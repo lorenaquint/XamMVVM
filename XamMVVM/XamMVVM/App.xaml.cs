@@ -1,22 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Xamarin.Forms;
+﻿
 
 namespace XamMVVM
 {
-	public partial class App : Application
+    using Xamarin.Forms;
+
+    public partial class App : Application
 	{
 		public App ()
 		{
 			InitializeComponent();
 
-			MainPage = new XamMVVM.MainPage();
-		}
+            // The root page of your application
+            MainPage = new ContentPage
+            {
+                Content = new StackLayout
+                {
+                    VerticalOptions = LayoutOptions.Center,
+                    Children = {
+                        new Label {
+                            HorizontalTextAlignment = TextAlignment.Center,
+                            Text = "Esto es MVVM!"
+                        }
+                    }
+                }
+            };
 
-		protected override void OnStart ()
+        }
+
+        protected override void OnStart ()
 		{
 			// Handle when your app starts
 		}
